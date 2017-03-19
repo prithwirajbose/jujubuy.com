@@ -1,0 +1,1 @@
+<div id="usermenu">Welcome <b>Guest</b></div>
