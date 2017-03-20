@@ -176,6 +176,8 @@ h2.section-title.small {
 
 .widgetcontainer {
 	margin: 30px 10px;
+	width:100%;
+	min-width:400px;
 }
 
 .widget {
@@ -272,4 +274,24 @@ h2.section-title.small {
 	color: #222;
 	padding: 0px;
 	margin: 0px;
+}
+
+.gridcontainer {
+	margin: 30px 10px;
+	width:100%;
+	min-width:400px;
+}
+
+.griditem {
+	width: 100%;
+	height: 320px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	margin: 12px;
+	float: left;
+	display: inline;
+	padding: 0px;
+	overflow:hidden;
 }
