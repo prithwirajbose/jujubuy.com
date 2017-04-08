@@ -1,5 +1,5 @@
 var getUrl = function() {
-	return "ajax.php?action=listComponents&q=" + $('input#searchQuery').val();
+	return JUJUBUY.site + "/ajax.php?action=listComponents&q=" + $('input#searchQuery').val();
 };
 
 $(document).ready(function() {

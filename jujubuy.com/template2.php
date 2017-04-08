@@ -33,7 +33,29 @@
 <h2 class="section-title small">Latest Products</h2>
 <?php for($xxx=0;$xxx<8;$xxx++) { ?>
 <div class="griditem">
-
+<div class="griditem-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
+<div class="griditem-text">
+<h3 class="griditem-title">CD<?php echo rand(4000,4099); ?> Integrated Circuit</h3>
+<div class="griditem-desc">
+<div class="griditem-price">&#8377; <?php echo rand(20,9999); ?>.00</div>
+<div class="griditem-spec"><?php 
+$arr = ["lorem", "ipsum", "dolor", "sit", "amet"];
+echo "S";
+$c = rand(20,100);
+for($i=0;$i<$c; $i++) {
+	
+echo $arr[rand(0,4)] . " ";
+}
+?>
+</div>
+</div>
+</div>
+<div class="griditem-tools">
+<a href="<?php echo $config['site']; ?>/cart/?id=123" class="gridbtn" id="griditem-btnbuynow"><img src="<?php echo $config['site']; ?>/images/details-electronics-blue.png" style="border:none; width:150px; height:auto;" /></a>
+<br />
+<a href="<?php echo $config['site']; ?>" class="gridbtn" id="griditem-btnbuynow"><img src="<?php echo $config['site']; ?>/images/buy-now-electronics-orange.png" style="border:none; width:150px; height:auto;" /></a>
+</div>
+<div class="clear"></div>
 </div>
 <?php }
 ?>

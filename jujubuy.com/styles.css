@@ -26,7 +26,7 @@ a:hover {
 	margin: 0 auto;
 	width: 100%;
 	overflow: hidden;
-	min-width: 1000px;
+	min-width: 900px;
 	padding: 0px;
 }
 
@@ -35,7 +35,7 @@ a:hover {
 	margin: 0px;
 	display: block;
 	background: #666 url(images/topbg.png) top left repeat;
-	min-width: 1100px;
+	min-width: 900px;
 }
 
 #logo {
@@ -99,7 +99,7 @@ a:hover {
 	padding: 0px 20px;
 	margin: 0px;
 	background: #666 url(images/topbg.png) top left repeat;
-	min-width: 1100px;
+	min-width: 900px;
 }
 
 #navmenu {
@@ -161,6 +161,7 @@ a:hover {
 h2.section-title {
 	font-size: 18px;
 	font-weight: bold;
+	width:99%;
 	border-radius: 10px 0px 0px 10px;
 	-moz-border-radius: 10px 0px 0px 10px;
 	border-bottom: 3px solid #0d2944;
@@ -283,15 +284,97 @@ h2.section-title.small {
 }
 
 .griditem {
-	width: 100%;
-	height: 320px;
-	border-top: 1px solid #ccc;
-	border-left: 1px solid #ccc;
+	width: 98%;
+	height: 180px;
+	border:none;
 	border-bottom: 1px solid #aaa;
-	border-right: 1px solid #aaa;
 	margin: 12px;
-	float: left;
-	display: inline;
-	padding: 0px;
-	overflow:hidden;
+	display: block;
+	padding: 5px 30px;
+	vertical-align: middle;
+}
+
+.griditem:last-child {
+	border:none !important;
+}
+
+.griditem-icon {
+	min-width:160px;
+	width:15%;
+	float:left;
+	display:inline;
+}
+
+.griditem .griditem-icon img {
+	border:1px solid #aaa;
+	width: 150px;
+	height: auto;
+	margin:0px;
+}
+
+.griditem-text {
+	width:64%;
+	min-width:400px;
+	float:left;
+	display:inline;
+}
+
+.griditem-text .griditem-title {
+	font-size:18px;
+	font-weight:bold;
+}
+
+.griditem-text .griditem-desc {
+	width:100%;
+	display:block;
+	margin-top:10px;
+	font-size:14px;
+}
+
+.griditem-text .griditem-desc .griditem-price {
+	font-size:16px;
+	color:#555;
+}
+
+.griditem-text .griditem-desc .griditem-spec {
+	margin-top:10px;
+	height:80px;
+	display:table-cell;
+	vertical-align: bottom;
+}
+
+.griditem-tools {
+	width:20%;
+	min-width:160px;
+	float:right;
+	text-align: right;
+}
+
+.gridbtn {
+}
+
+.gridbtn img {
+	margin: auto;
+	vertical-align: middle; 
+	display: inline-block;
+	margin:3px auto;
+}
+
+.note {
+	font-size:12px;
+	font-style: italic;
+	color: #222;
+	margin:auto 10px;
+}
+
+.redtext {
+	color: red;
+}
+
+.greentext {
+	color:green;
+}
+
+.boldtext {
+	font-weight:bold;
 }

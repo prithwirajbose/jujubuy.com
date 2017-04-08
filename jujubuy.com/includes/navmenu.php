@@ -21,23 +21,44 @@
 </div>
 
 <div class="dropdown">
-  <div class="dropbtn"><a href="#">Integrated Circuit</a></div>
+  <div class="dropbtn"><a href="<?php echo $config['site']; ?>/category/ic-semi-conductors">ICs &amp; Semi-Conductors</a></div>
   <div class="dropdown-content">
-    <p>Hello World!</p>
+  	<p><a href="<?php echo $config['site']; ?>/category/4000-series">4000 Series IC</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/7400-series">7400 Series IC</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/voltage-regulator">Voltage Regulator</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/op-amp">Op-Amp IC</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/diode-rectifier">Diode &amp; Rectifier</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/transistor">Bipolar Transistor</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/fet-mosfet">FET &amp; MOSFET</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/scr-triac">SCR &amp; Triac</a></p>
   </div>
 </div>
 
 <div class="dropdown">
-  <div class="dropbtn"><a href="#">Semi-Conductors</a></div>
+  <div class="dropbtn"><a href="<?php echo $config['site']; ?>/category/passive">Passive Components</a></div>
   <div class="dropdown-content">
-    <p>Hello World!</p>
+    <p><a href="<?php echo $config['site']; ?>/category/resistor">Resistor</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/ceramic-polyester-capacitor">Ceramic &amp; Polyester Capacitor</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/electrolytic-capacitor">Electrolytic Capacitor</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/inductor">Inductor</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/relay">Relay</a></p>
+    <p><a href="<?php echo $config['site']; ?>/category/crystal-oscillator">Crystal Oscillator</a></p>
   </div>
 </div>
 
 <div class="dropdown">
-  <div class="dropbtn"><a href="#">Passive Components</a></div>
+  <div class="dropbtn"><a href="<?php echo $config['site']; ?>/category/interfacing-components">Interfacing Components</a></div>
   <div class="dropdown-content">
-    <p>Hello World!</p>
+    <p><a href="<?php echo $config['site']; ?>/category/resistor">Resistor</a></p>
+   
+  </div>
+</div>
+
+<div class="dropdown">
+  <div class="dropbtn"><a href="<?php echo $config['site']; ?>/category/miscelleneous">Miscelleneous</a></div>
+  <div class="dropdown-content">
+    <p><a href="<?php echo $config['site']; ?>/category/resistor">Resistor</a></p>
+
   </div>
 </div>
 

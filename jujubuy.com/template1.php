@@ -29,7 +29,7 @@
 <div class="widgetcontainer latest-products">
 <h2 class="section-title small">Latest Products</h2>
 <?php for($xxx=0;$xxx<8;$xxx++) { ?>
-<div class="widget"><a href="#"><div class="widget-icon"><img src="images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
+<div class="widget"><a href="#"><div class="widget-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
 <div class="widget-text">
 <h3 class="widget-title">CD<?php echo rand(4000,4099); ?> Integrated Circuit</h3>
 </div>
@@ -47,7 +47,7 @@
 <div class="widgetcontainer popular-products">
 <h2 class="section-title small">Most Popular Products</h2>
 <?php for($xxx=0;$xxx<16;$xxx++) { ?>
-<div class="widget"><a href="#"><div class="widget-icon"><img src="images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
+<div class="widget"><a href="#"><div class="widget-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
 <div class="widget-text">
 <h3 class="widget-title">CD<?php echo rand(4000,4099); ?> Integrated Circuit</h3>
 </div>
