@@ -15,4 +15,19 @@ function getChildrenCategoryIds($catid,$conn) {
 	return $catlist;
 }
 }
+
+function getChildrenCategories($catid,$conn) {
+	$catlist = array();
+	$cdata = mysqli_query($conn, "select * from product_category where parent_category_id=".$catid);
+	if(mysqli_num_rows($cdata)>0) {
+		while($crow = mysqli_fetch_assoc($cdata)) {
+			array_push($catlist, $crow);
+			$nextarr = getChildrenCategoryIds($crow['category_id'],$conn);
+			if(is_array($nextarr) && sizeof($nextarr)>0) {
+				$catlist = array_merge($catlist, $nextarr);
+			}
+		}
+	}
+	return $catlist;
+}
 ?>

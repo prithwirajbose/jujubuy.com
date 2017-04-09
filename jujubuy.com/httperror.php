@@ -1,5 +1,6 @@
-<?php include("config.php"); ?>
-<?php include("functions.php"); ?>
+<?php include_once("config.php"); ?>
+<?php include_once("db.php"); ?>
+<?php include_once("functions.php"); ?>
 <?php 
 $status = http_response_code();
 $httpMessage = array(

@@ -1,10 +1,10 @@
 <?php include_once("config.php"); ?>
-<?php include_once("functions.php"); ?>
 <?php include_once("db.php"); ?>
+<?php include_once("functions.php"); ?>
 
 <?php
 $conn = connectDb ();
-$catslug = mysqli_real_escape_string ( $conn, $_REQUEST ['catslug'] );
+$catslug = !empty($_REQUEST ['catslug']) ? mysqli_real_escape_string ( $conn, $_REQUEST ['catslug'] ) : "unknowncatslugnotrequiredtofindany";
 $catlist = [ 
 		0 
 ];
@@ -89,8 +89,10 @@ if (mysqli_num_rows ( $data ) > 0) {
 		?>
 <div class="griditem">
 					<div class="griditem-icon">
-						<img
-							src="<?php echo $config['site']; ?>/images/<?php echo (!empty($row['image_file']) ? $row['image_file'] : "noimage.png"); ?>" />
+						<a href="<?php echo $config['site']; ?>/product/<?php echo $row['url_slug']; ?>_<?php echo $row['product_id']; ?>" 
+						title="<?php echo str_replace('"',"",$row['product_name']); ?>"><img
+							src="<?php echo $config['site']; ?>/images/<?php echo (!empty($row['image_file']) ? $row['image_file'] : "noimage.png"); ?>" 
+							 title="<?php echo str_replace('"',"",$row['product_name']); ?>" alt="<?php echo str_replace('"',"",$row['product_name']); ?>" /></a>
 					</div>
 					<div class="griditem-text">
 						<h3 class="griditem-title"><?php echo $row['product_name']; ?></h3>
@@ -99,7 +101,8 @@ if (mysqli_num_rows ( $data ) > 0) {
 <span class="note">per <?php echo $row['unit_name']; ?></span> <span
 									class="note boldtext <?php echo $row['units_available']>0 ? "greentext" : "redtext"; ?>">
 <?php echo $row['units_available']>0 ? "&#10003; IN STOCK" : "OUT OF STOCK"; ?></span>
-								<span class="note">&#10003; 7 Day Shipping</span>
+								<span class="note"><img src="<?php echo $config['site']; ?>/images/shipping-icon.png" border="0" style="height:24px; 
+								width:auto; margin-bottom:-7px; opacity:50%; -moz-opacity:0.5; -webkit-opacity:0.5;" /> Fast Shipping by DTDC / Blue Dart / India Post</span>
 							</div>
 							<div class="griditem-spec">
 <?php echo substr(strip_tags($row['long_description']),0,100)."..."; ?>
@@ -108,15 +111,18 @@ if (mysqli_num_rows ( $data ) > 0) {
 					</div>
 					<div class="griditem-tools">
 						<a
-							href="<?php echo $config['site']; ?>/cart/add?id=<?php echo $row['product_id']; ?>"
-							class="gridbtn" id="griditem-btndetails"> <img
-							src="<?php echo $config['site']; ?>/images/details-electronics-blue.png"
-							style="border: none; width: 150px; height: auto;" />
-						</a> <br /> <a
 							href="<?php echo $config['site']; ?>/product/<?php echo $row['url_slug']; ?>_<?php echo $row['product_id']; ?>"
-							class="gridbtn" id="griditem-btnbuynow"> <img
+							class="gridbtn" id="griditem-btndetails" title="<?php echo str_replace('"',"",$row['product_name']); ?>"> <img
+							src="<?php echo $config['site']; ?>/images/details-electronics-blue.png" 
+							style="border: none; width: 150px; height: auto;" title="Details of <?php echo str_replace('"',"",$row['product_name']); ?>"  
+							alt="Details of <?php echo str_replace('"',"",$row['product_name']); ?>" />
+						</a> <br /> <a
+							href="<?php echo $config['site']; ?>/cart/add?productid=<?php echo $row['product_id']; ?>"
+							class="gridbtn" id="griditem-btnbuynow" title="<?php echo str_replace('"',"",$row['product_name']); ?>"> <img
 							src="<?php echo $config['site']; ?>/images/buy-now-electronics-orange.png"
-							style="border: none; width: 150px; height: auto;" /></a>
+							style="border: none; width: 150px; height: auto;"  
+							 title="Buy <?php echo str_replace('"',"",$row['product_name']); ?>"  
+							 alt="Buy <?php echo str_replace('"',"",$row['product_name']); ?>" /></a>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -128,20 +134,8 @@ else
 ?>
 </div>
 
-			<div>
-<?php
-if ($recordcount > 0) {
-	print 'Pages : ';
-	$totalpages = ($recordcount / $pagesize);
-	for($i = 0; $i < $totalpages; $i ++) {
-		if (($i + 1) == $pagenum) {
-			print '<b>Page ' . ($i + 1) . '</b> | ';
-		} else {
-			print '<a href="' . $config ['site'] . '/category/' . $catslug . '?pagenum=' . ($i + 1) . '&pagesize=' . $pagesize . '">Page ' . ($i + 1) . '</a> | ';
-		}
-	}
-	?>
-	Show <select id="paginator_pagesize" name="pagenum"
+			<div class="paginator">
+				Show <select id="paginator_pagesize" name="pagenum"
 					onchange="javascript:window.location='<?php echo $config['site'].'/category/'.$catslug.'?pagenum=1&pagesize=';?>'+this.value;">
 					<option value="5"
 						<?php if($pagesize==5) print ' selected="selected"'; ?>>5</option>
@@ -153,9 +147,18 @@ if ($recordcount > 0) {
 						<?php if($pagesize==50) print ' selected="selected"'; ?>>50</option>
 					<option value="100"
 						<?php if($pagesize==100) print ' selected="selected"'; ?>>100</option>
-				</select> records per page
-
+				</select> records per page | 
 <?php
+if ($recordcount > 0) {
+	print 'Pages : ';
+	$totalpages = ($recordcount / $pagesize);
+	for($i = 0; $i < $totalpages; $i ++) {
+		if (($i + 1) == $pagenum) {
+			print '<a class="current-page">' . ($i + 1) . '</a> ';
+		} else {
+			print '<a href="' . $config ['site'] . '/category/' . $catslug . '?pagenum=' . ($i + 1) . '&pagesize=' . $pagesize . '">' . ($i + 1) . '</a> ';
+		}
+	}
 }
 ?>
 

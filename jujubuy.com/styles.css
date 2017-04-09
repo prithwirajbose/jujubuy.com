@@ -378,3 +378,50 @@ h2.section-title.small {
 .boldtext {
 	font-weight:bold;
 }
+
+.paginator {
+	text-align:center;
+	width:100%;
+}
+
+.paginator a:link, .paginator a:visited, .paginator a:hover {
+	margin:2px;
+	padding:5px 10px;
+	border:2px solid #067ad8;
+	color: #067ad8;
+	background: #eee;
+	text-decoration:none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-weight:bold;
+}
+
+.paginator a:hover {
+	background:#fff;
+	border:2px solid #099ad8;
+}
+
+.paginator a.current-page {
+	margin:2px;
+	padding:5px 10px;
+	border:2px solid #000;
+	color: #000;
+	background: #ff9c11;
+	text-decoration:none;
+	font-weight:bold;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-weight:bold;
+}
+
+.paginator select {
+	border: 2px solid #067ad8;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #067ad8;
+	padding:5px 10px;
+	cursor:pointer;
+}
