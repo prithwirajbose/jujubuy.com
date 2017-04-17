@@ -15,6 +15,12 @@ if(empty($_SESSION['defaults'])) {
 }
 
 $config = array(
-		'site' => 'http://localhost/jujubuy.com/jujubuy.com'
+		'site' => 'http://localhost/jujubuy.com/jujubuy.com',
+		'currency_rate' => array(
+				'INR' => 1.00,
+				'USD' => 65.00,
+				'GBP' => 72.00,
+				'EUR' => 84.00
+		)
 );
 ?>

@@ -31,7 +31,10 @@
 
 
 <div class="gridcontainer latest-products">
-<h2 class="section-title small">Latest Products</h2>
+<div class="section-title-container small">
+				<h2 class="section-title">Latest Products</h2>
+				<div class="clear"></div>
+				</div>
 <?php for($xxx=0;$xxx<8;$xxx++) { ?>
 <div class="griditem">
 <div class="griditem-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>

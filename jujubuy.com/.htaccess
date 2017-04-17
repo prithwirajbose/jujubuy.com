@@ -13,3 +13,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^category/(.*)?$ /jujubuy.com/jujubuy.com/product-grid.php?catslug=$1 [L,QSA]
 RewriteRule ^product/(.*)_(.*)$ /jujubuy.com/jujubuy.com/product-grid.php?id=$2&slug=$1
+RewriteRule ^cart$ /jujubuy.com/jujubuy.com/cart.php [L,QSA]
+
+ErrorDocument 404 /jujubuy.com/jujubuy.com/httperror.php

@@ -1,6 +1,6 @@
-<?php include_once("config.php"); ?>
+<?php include("config.php"); ?>
 <?php include_once("db.php"); ?>
-<?php include_once("functions.php"); ?>
+<?php include("functions.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +29,9 @@
 
 <div class="widgetcontainer latest-products">
 <div class="section-title-container small">
-				<h2 class="section-title">Latest Products</h2>
-				<div class="clear"></div>
-				</div>
+<h2 class="section-title">Latest Products</h2>
+<div class="clear"></div>
+</div>
 <?php for($xxx=0;$xxx<8;$xxx++) { ?>
 <div class="widget"><a href="#"><div class="widget-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
 <div class="widget-text">
@@ -50,9 +50,9 @@
 
 <div class="widgetcontainer popular-products">
 <div class="section-title-container small">
-				<h2 class="section-title">Popular Products</h2>
-				<div class="clear"></div>
-				</div>
+<h2 class="section-title">Most Popular Products</h2>
+<div class="clear"></div>
+</div>
 <?php for($xxx=0;$xxx<16;$xxx++) { ?>
 <div class="widget"><a href="#"><div class="widget-icon"><img src="<?php echo $config['site']; ?>/images/<?php echo ($xxx % rand(2,3)==0) ? "ic.png" : "noimage.png"; ?>" /></div>
 <div class="widget-text">
